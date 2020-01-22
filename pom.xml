@@ -7,7 +7,7 @@
     <groupId>cn.aura</groupId>
     <artifactId>TestGIT</artifactId>
     <version>1.0-SNAPSHOT</version>
-
+    <packaging>war</packaging>
     <parent>
         <groupId>org.springframework.boot</groupId>
         <artifactId>spring-boot-starter-parent</artifactId>
@@ -17,6 +17,14 @@
         <dependency>
             <groupId>org.springframework.boot</groupId>
             <artifactId>spring-boot-starter-web</artifactId>
+        </dependency>
+        <dependency>
+            <groupId>org.springframework.boot</groupId>
+            <artifactId>spring-boot-starter-tomcat</artifactId>
+            <!--打包的时候可以不用包进去，别的设施会提供。事实上该依赖理论上可以参与编译，测试，运行等周期。
+            Iii:有的版本可以不用剔除内置tomcat
+                相当于compile，但是打包阶段做了exclude操作-->
+            <scope>provided</scope>
         </dependency>
 
     </dependencies>
